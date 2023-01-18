@@ -21,6 +21,10 @@ class IndexView(generic.ListView):
         pub_date__lte=timezone.now()
     ).order_by('-pub_date')[:5]
 
+    # def get_context_data(self, object_list, **kwargs):
+    #     print(super(IndexView,self).get_context_data(),)
+
+
     ## latest_question_list = Question.objects.order_by('-pub_date')[:5]
     ## context = {'latest_question_list': latest_question_list}
     ## return render(request, 'polls/index.html', context)

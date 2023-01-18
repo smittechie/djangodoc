@@ -1,14 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
 </head>
 <body>
-{% if context_object_name %}
+{% if latest_question_list %}
     <ul>
-    {% for question in context_object_name %}
+    {% for question in latest_question_list %}
         <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
     {% endfor %}
     </ul>
