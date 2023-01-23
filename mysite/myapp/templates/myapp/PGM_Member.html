@@ -7,9 +7,10 @@
 </head>
 <body>
 <form method="POST" class="post-form">
-        {% csrf_token %}
-        {{ form.as_table }}
-        <button type="submit" class="save btn btn-default">Save</button>
-
+    {% csrf_token %}
+    {{ form.as_table }}
+    {{ form2.as_table }}
+    <button type="submit" class="save btn btn-default">Save</button>
+</form>
 </body>
 </html>

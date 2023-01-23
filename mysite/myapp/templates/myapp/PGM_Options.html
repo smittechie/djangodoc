@@ -1,0 +1,16 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+</head>
+<body>
+<form method="GET" class="post-form" >
+        <input type="radio" name="choice" value="Person">Name
+        <input type="radio" name="choice" value="Group">Group
+
+        <button type="submit" class="save btn btn-default">Save</button>
+
+</body>
+</html>

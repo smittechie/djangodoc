@@ -6,9 +6,8 @@
 <body>
 
 <ul>
-    {{ list_pgm }}
-    {% for person in list_pgm %}
-    <li>{{ person.name }}
+    {% for group in grouppgm %}
+    <li>{{ group.group }}
     </li>
     {% endfor %}
 </ul>

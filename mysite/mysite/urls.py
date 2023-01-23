@@ -20,6 +20,7 @@ from django.urls import path, include
 from . import settings
 
 urlpatterns = [
+    path('m2m/', include('m2m.urls')),
     path('polls/', include('polls.urls')),
     path('myapp/', include('myapp.urls')),
     path('admin/', admin.site.urls),

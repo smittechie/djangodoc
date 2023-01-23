@@ -1,0 +1,37 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+</head>
+<body>
+<form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+</form>
+</body>
+</html>
+
+
+
+
+{% comment %}
+
+{{ object.shirt_size }}
+
+
+{% if shirt_sizeee %}
+<ul>
+    {% for size in shirt_sizeee %}
+    {{ size.shirt_size}}
+    <h2>Hello </h2>
+    {% endfor %}
+</ul>
+<h1>Heelllo </h1>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+{% endcomment %}
