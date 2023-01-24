@@ -12,7 +12,7 @@ class PGM_Group(generic.CreateView):
     model = Group
     form_class = PGMGroupForm
     template_name = 'm2m/PGM_Group.html'
-    success_url = reverse_lazy('m2m:pgmgroupresult')             # pgmgroupresult  ,  pgmpersonresult   pgmoptions
+    success_url = reverse_lazy('m2m:pgmpersonresult')             # pgmgroupresult  ,  pgmpersonresult   pgmoptions
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -25,6 +25,7 @@ class PGM_Group(generic.CreateView):
         form2 = context['form2']
 
         if form2.is_valid():
+            # person = Person.objects.create(name=form2.cleaned_data['person'])
             person = Person.objects.create(name=form2.cleaned_data['person'])
             member = Membership.objects.create(person=person, group=form1,
                                                date_joined=form2.cleaned_data['date_joined'],

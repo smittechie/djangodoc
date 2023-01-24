@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modl.apps.ModlConfig',
     'm2m.apps.M2MConfig',
     'myapp.apps.MyappConfig',
     'polls.apps.PollsConfig',
