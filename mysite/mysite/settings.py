@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'formss.apps.FormssConfig',
+    'queries.apps.QueriesConfig',
     'modl.apps.ModlConfig',
     'm2m.apps.M2MConfig',
     'myapp.apps.MyappConfig',
