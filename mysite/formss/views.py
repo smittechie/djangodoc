@@ -1,7 +1,8 @@
-from django.http import HttpResponseRedirect
+from django.core.exceptions import ValidationError
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 
-from .forms import NameForm, ContactForm
+from .forms import NameForm, ContactForm, AuthorForm
 
 
 # Create your views here.
@@ -24,3 +25,18 @@ def get_contact(request):
     else:
         form1 = ContactForm()
     return render(request, 'formss/contact.html', {'form1': form1})
+
+
+def thanks(request):
+    context = 'Hello HttpResponse'
+    return render(request, 'formss/thanks.html', {'context': context})
+
+def validations(request):
+    if request.method == 'POST':
+        auth_form = AuthorForm(request.POST)
+        if auth_form.is_valid():
+            return HttpResponseRedirect("thanks/")
+    else:
+        auth_form = AuthorForm()
+
+    return render(request, 'formss/author.html', {'auth_form': auth_form})
