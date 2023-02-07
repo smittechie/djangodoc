@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% comment %}
+        {% now " F Y H:i" %}
+
+         {{ value|date:"D d"}}
+
+    {% endcomment %}
+
+</head>
+<body>
+    {% csrf_token %}
+    {% for nn in context %}
+    <br>
+    {{ nn.time_now|date:"D d"}}
+{% endfor %}
+
+
+
+</body>
+</html>

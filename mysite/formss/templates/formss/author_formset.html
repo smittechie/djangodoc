@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% comment %}
+    {% autoescape on %}
+    <h1>{{ formset }}</h1>
+    {% endautoescape %}
+
+
+
+<!--{% for o in formset %}-->
+<!--    <tr class="{% cycle 'row1' 'row2' %}">-->
+<!--        -->
+<!--    </tr>-->
+<!--{% endfor %}-->
+
+    {% extends 'base.html' %}
+    {% lorem %}
+
+    {% endcomment %}
+
+<br>
+    {% now " F Y H:i" %}
+    <br>
+    {{ value|date:"D d"}}
+</head>
+<body>
+<form action="formss/formset_view" method="post">
+    {% csrf_token %}
+    {{ formset.as_p }}
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

@@ -3,7 +3,7 @@ from django.core import validators
 from django.core.exceptions import ValidationError
 from django.forms import Textarea
 
-from .models import TITLE_CHOICES, Author
+from .models import TITLE_CHOICES, Author, TimeDate
 
 
 class NameForm(forms.Form):
@@ -40,6 +40,7 @@ class ContactForm(forms.Form):
 class AuthorForm(forms.ModelForm):
     class Meta:
         model = Author
+        # exclude = ['name']
         fields = ['name', 'title', 'birth_date']
         widgets = {
             'name': Textarea(attrs={'cols': 80, 'rows': 20}),
@@ -50,13 +51,7 @@ class BookForm(forms.Form):
     name = forms.CharField(max_length=100)
     authors = forms.ModelMultipleChoiceField(queryset=Author.objects.all())
 
-#
-# class AuthorForm(ModelForm):
-#     class Meta:
-#         model = Author
-#         fields = ['name', 'title', 'birth_date']
-#
-# class BookForm(ModelForm):
-#     class Meta:
-#         model = Book
-#         fields = ['name', 'authors']
+class TimeDateForm(forms.ModelForm):
+    class Meta:
+        model = TimeDate
+        fields = ['surname','time_now']

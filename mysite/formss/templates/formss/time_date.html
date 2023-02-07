@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% comment %}
+        {% now " F Y H:i" %}
+
+         {{ value|date:"D d"}}
+
+    {% endcomment %}
+
+</head>
+<body>
+<form action="date_formatshow" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>
