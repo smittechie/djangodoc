@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.forms import modelformset_factory, modelform_factory
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .forms import NameForm, ContactForm, AuthorForm, TimeDateForm
 from .models import Author, TimeDate
@@ -78,7 +78,7 @@ def time_date(request):
         surname = request.POST['surname']
         time_now = request.POST['time_now']
         detail = TimeDate.objects.create(surname=surname, time_now=time_now)
-        form = detail
+        return redirect('date_formatshow')
     else:
         form = TimeDateForm()
     return render(request, 'formss/time_date.html', {"form": form})

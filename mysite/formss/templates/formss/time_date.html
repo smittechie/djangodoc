@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<form action="date_formatshow" method="post">
+<form action="{% url 'time_date' %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit">

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'templateapi.apps.TemplateapiConfig',
     'formss.apps.FormssConfig',
     'queries.apps.QueriesConfig',
     'modl.apps.ModlConfig',

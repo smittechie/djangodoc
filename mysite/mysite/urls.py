@@ -20,6 +20,7 @@ from django.urls import path, include
 from . import settings
 
 urlpatterns = [
+    path('templateapi/', include('templateapi.urls')),
     path('formss/', include('formss.urls')),
     path('queries/', include('queries.urls')),
     path('m2m/', include('m2m.urls')),
